@@ -9,15 +9,13 @@
     <h3>List of Stocks Using Repeaters</h3>
 
     <div ng-repeat="s in mainCtrl.stocks">
-      <div stock-widget stock-data="s">
-      </div>
+      <div stock-widget stock-data="s"></div>
     </div>
 
     <h3>List of Stocks Repeating Manually</h3>
-    <div stock-widget stock-data="mainCtrl.stocks[0]">
-    </div>
-    <div stock-widget stock-data="mainCtrl.stocks[1]">
-    </div>
+    <div stock-widget stock-data="mainCtrl.stocks[0]"></div>
+    <div stock-widget stock-data="mainCtrl.stocks[1]"></div>
+    <div stock-widget stock-data="mainCtrl.stocks[2]"></div>
 
     <button ng-click="mainCtrl.changeAllStocks()">
       Change All Stock From Controller

@@ -5,10 +5,11 @@ angular.module('stockMarketApp', [])
     var self = this;
     self.stocks = [
       {name: 'First Stock', price: 100, previous: 220},
-      {name: 'Second Stock', price: 140, previous: 120}
+      {name: 'Second Stock', price: 140, previous: 120},
+      {name: 'Third Stock', price: 340, previous: 180}
     ];
     self.changeAllStocks = function() {
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < 3; i++) {
         self.stocks[i] = {
           name: 'Controller Stock',
           price: 200,
