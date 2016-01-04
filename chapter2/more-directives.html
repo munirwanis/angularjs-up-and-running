@@ -15,7 +15,7 @@
   </style>
 
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl as mainCtrl">
   
 
   <div ng-repeat="note in mainCtrl.notes" ng-class="mainCtrl.getNoteClass(note.done)">
