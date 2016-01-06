@@ -1,5 +1,6 @@
 // File: chapter3/controllerSpec.js
-describe('Controller: ListCtrl', function() {
+describe('Controller: ListCtrl', function () {
+
   // Instantiate a new version of my module before each test
   beforeEach(module('notesApp'));
 
@@ -11,6 +12,7 @@ describe('Controller: ListCtrl', function() {
     ctrl = $controller('ListCtrl');
   }));
 
+
   it('should have items available on load', function() {
     expect(ctrl.items).toEqual([
       {id: 1, label: 'First', done: true},
@@ -19,16 +21,19 @@ describe('Controller: ListCtrl', function() {
   });
 
   it('should have highlight items based on state', function() {
-    var item = {id: 1, label: 'First', done: true};
+     var item = {id: 1, label: 'First', done: true};
+     var actualClass = ctrl.getDoneClass(item);
+      
+     expect(actualClass.finished).toBeTruthy();
+     expect(actualClass.unfinished).toBeFalsy();
 
-    var actualClass = ctrl.getDoneClass(item);
-    expect(actualClass.finished).toBeTruthy();
-    expect(actualClass.unfinished).toBeFalsy();
+     item.done = false;
+     actualClass = ctrl.getDoneClass(item);
 
-    item.done = false;
-    actualClass = ctrl.getDoneClass(item);
-    expect(actualClass.finished).toBeFalsy();
-    expect(actualClass.unfinished).toBeTruthy();
+     expect(actualClass.finished).toBeFalsy();
+     expect(actualClass.unfinished).toBeTruthy();
+
+
   });
 
 });
